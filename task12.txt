@@ -1,0 +1,31 @@
+IP : 34.23.201.5
+
+gcloud compute ssh project-001 --zone us-eastl-d   //connects you to my VM instance named project-001 in the us-east1-d zone using SSH.
+
+sudo git clone https://github.com/SimlaRiyas/task_ten.git   // cloned task_ten into cloud
+
+Installed and started apache, PHP and MySQL Server using the following commands
+
+sudo apt update--then update
+sudo apt install apache2 
+sudo systemctl start apache2
+sudo apt install php php-mysql
+sudo apt install mysql-server
+sudo systemctl start mysql
+sudo systemctl status MySQL
+
+moved task_ten to /var/www/html/
+
+started MySQL with root user privileges => sudo mysql -u root -p
+
+create database task;    //database created
+use task;                //MySQL selects the task database for all subsequent SQL queries.
+
+//users table created using the following query
+CREATE TABLE users (id INT AUTO_INCREMENT PRIMARY KEY,first_name VARCHAR(50) NOT NULL,last_name VARCHAR(5O) NOT NULL,email VARCHAR(100) NOT NULL,phone_ no VARCHAR(20) NOT NULL,password VARCHAR(100) NOT NULL);
+
+create a new database user and set privilege using the following commands
+
+CREATE USER 'csa'@'localhost' IDENTIFIED BY 'simla@csa';
+GRANT ALL PRIVILEGES ON task.* TO 'csa'@'localhost';
+
